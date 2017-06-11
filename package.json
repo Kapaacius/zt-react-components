@@ -4,23 +4,24 @@
     "description": "Shared React components for ZeroTurnaround products",
     "license": "TODO",
     "main": "lib/index.js",
-    "files": ["dist", "lib", "src"],
+    "files": [
+        "dist",
+        "lib",
+        "src"
+    ],
     "scripts": {
         "build": "npm run build:commonjs && npm run build:umd",
-
         "build:commonjs": "babel src -d lib",
         "build:commonjs:watch": "npm run build -- --watch",
-
         "build:umd": "webpack src/index.js dist/zt-react-components.js",
         "build:umd:watch": "npm run build:umd -- --watch",
-
         "test": "jest",
         "test:watch": "jest --watch",
         "test:update": "jest --u",
-
+        "visual": "node tests/visual",
+        "visual:approve": "backstop approve",
         "lint": "eslint .",
-
-        "prepublish": "npm test && npm run lint && npm run build"
+        "prepublish": "npm test && npm run lint && npm run visual && npm run build"
     },
     "dependencies": {
         "react": "^15.5.4",
@@ -32,11 +33,13 @@
         "babel-loader": "^7.0.0",
         "babel-preset-env": "^1.5.2",
         "babel-preset-react": "^6.24.1",
+        "backstopjs": "^2.7.3",
         "eslint": "^3.19.0",
         "eslint-config-zt": "^1.4.0",
         "eslint-plugin-react": "^7.0.1",
         "jest": "^20.0.4",
         "jest-styled-components": "next",
+        "node-http-server": "^6.2.1",
         "react-test-renderer": "^15.5.4",
         "webpack": "^2.6.1"
     },

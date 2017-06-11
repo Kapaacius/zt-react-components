@@ -1,0 +1,20 @@
+{
+    "viewports": [{
+        "name": "computer",
+        "width": 1440,
+        "height": 900
+    }],
+    "scenarios": [{
+        "label": "snapshot",
+        "url": "http://localhost:5555",
+        "selectors": ["document"]
+    }],
+    "paths": {
+        "bitmaps_reference": "tests/visual/reference",
+        "bitmaps_test": "reports/visual-tests/screenshots",
+        "html_report": "reports/visual-tests/html",
+        "ci_report": "reports/visual-tests/ci"
+    },
+    "engine": "phantomjs",
+    "report": ["CI"]
+}
